@@ -2,7 +2,8 @@ import pandas as pd
 from storage import (NET_DATA, RANKING_DATA,
                      FUNNEL_DATA, FUNNEL_DATA_OUT2,
                      CONSISTENCY_DATA,
-                     NETSPLIT_DATA, NETSPLIT_DATA_OUT2)
+                     NETSPLIT_DATA, NETSPLIT_DATA_OUT2,
+                     LEAGUE_TABLE_DATA)
 from nmastudio.tools.utils import _IS_JUPYTER, _IS_IPYTHON
 
 
@@ -14,6 +15,7 @@ class Loader:
     consistency_data = CONSISTENCY_DATA
     net_split_data = NETSPLIT_DATA
     net_split_data_out2 = NETSPLIT_DATA_OUT2
+    league_table_data = LEAGUE_TABLE_DATA
 
     def __init__(self):
         self._is_jupyter = _IS_JUPYTER

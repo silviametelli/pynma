@@ -27,3 +27,9 @@ FUNNEL_DATA = pd.read_csv('db/funnel/funnel_data.csv')
 FUNNEL_DATA_OUT2 = pd.read_csv('db/funnel/funnel_data_out2.csv')
 
 
+for v in ['NET_DATA', 'NET_DATA2', 'NET_DATA2', 'CONSISTENCY_DATA', 'DEFAULT_ELEMENTS',
+          'DEFAULT_ELEMENTS2', 'FOREST_DATA', 'FOREST_DATA_OUT2', 'FOREST_DATA_PRWS',
+          'FOREST_DATA_PRWS_OUT2', 'LEAGUE_TABLE_DATA', 'CINEMA_NET_DATA1',
+          'CINEMA_NET_DATA2', 'NETSPLIT_DATA', 'NETSPLIT_DATA_OUT2', 'NETSPLIT_DATA_ALL',
+          'NETSPLIT_DATA_ALL_OUT2', 'RANKING_DATA', 'FUNNEL_DATA', 'FUNNEL_DATA_OUT2']:
+    exec(f"{v.lower()}={v}")

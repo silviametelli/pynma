@@ -1,14 +1,17 @@
 from nmastudio.nmastudio import *
 from nmastudio.tools.utils import _IS_JUPYTER
 
+# print(locals()['__spec__'].origin)
+
 if _IS_JUPYTER:
     from IPython.core.display import HTML
+
     with open(f'nmastudio/__res/icon_tiny.svg', 'r') as f:
         _svg_cnn = f.read()
     html_repr = _svg_cnn + f"""</br>
     <span style="white-space: nowrap;">
     <b>NMA Studio</b>
-    
+
     </span></br>
     <span style="white-space: nowrap;">
     <span style="color: gray">Interactive app:</span>

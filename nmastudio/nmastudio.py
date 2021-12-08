@@ -1,4 +1,7 @@
 import pandas as pd, numpy as np, plotly, os
+
+import nmastudio
+
 from nmastudio.loader import Loader
 import nmastudio._plotting_functions
 from nmastudio.tools.utils import _IS_JUPYTER
@@ -38,8 +41,9 @@ class NMA(Loader):
             plotly.offline.plot(fig)
         return fig
 
-    def league_table(self):
-        pass
+    def league_table(self, subset):
+        return nmastudio._plotting_functions._print_league_table(self.net_data, self.league_table_data,
+                                                                 subset=subset)
 
 
     def __repr__(self):
@@ -87,6 +91,7 @@ class NMA(Loader):
 if __name__=='__main__':
     path = 'db/psoriasis_wide.csv'
     self = NMA()
+    self.league_table()
     # self.plot_ranking(type='heatmap')
 
 
