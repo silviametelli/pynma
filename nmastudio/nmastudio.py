@@ -94,7 +94,7 @@ class NMA(Loader):
 if __name__=='__main__':
     path = 'db/psoriasis_wide.csv'
     self = NMA()
-    self.league_table(values_only=True)
+    self.league_table(subset=['BRODA', 'ETA', 'FUM'], values_only=True)
     # self.plot_ranking(type='heatmap')
 
 

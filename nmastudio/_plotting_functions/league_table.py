@@ -41,6 +41,9 @@ def _print_league_table(net_data, league_table_data, toggle_cinema=False,
         robs = robs.loc[subset, subset]
 
     if _IS_JUPYTER:
+        if any((values_only, lower_error, upper_error)):
+            leaguetable = leaguetable.round(3).astype(str)
+            np.fill_diagonal(leaguetable.values, leaguetable.columns)
         # for row hover use <tr> instead of <td>
         cell_hover = {'selector': 'td:hover',
                       'props': [('background-color', '#ffffb3')]}
