@@ -41,9 +41,12 @@ class NMA(Loader):
             plotly.offline.plot(fig)
         return fig
 
-    def league_table(self, subset):
+    def league_table(self, subset=None, values_only=False, lower_error=False, upper_error=False):
         return nmastudio._plotting_functions._print_league_table(self.net_data, self.league_table_data,
-                                                                 subset=subset)
+                                                                 subset=subset,
+                                                                 values_only=values_only,
+                                                                 lower_error=lower_error,
+                                                                 upper_error=upper_error)
 
 
     def __repr__(self):
@@ -91,7 +94,7 @@ class NMA(Loader):
 if __name__=='__main__':
     path = 'db/psoriasis_wide.csv'
     self = NMA()
-    self.league_table()
+    self.league_table(values_only=True)
     # self.plot_ranking(type='heatmap')
 
 

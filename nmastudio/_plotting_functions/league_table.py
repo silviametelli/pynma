@@ -7,11 +7,30 @@ from nmastudio.tools.utils import CINEMA_g, CINEMA_y, CINEMA_lb, CINEMA_r, CLR_B
 
 
 def _print_league_table(net_data, league_table_data, toggle_cinema=False,
-                  cinema_net_data1=None, cinema_net_data2=None, subset=None):
+                        cinema_net_data1=None, cinema_net_data2=None, subset=None,
+                        values_only=False, lower_error=False, upper_error=False):
 
     YEARS_DEFAULT = np.array([1963, 1990, 1997, 2001, 2003, 2004, 2005, 2006, 2007, 2008, 2010,
                               2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020])
     leaguetable = league_table_data
+    if sum([values_only, lower_error, upper_error])>1:
+        raise AssertionError("Only one of values_only, lower_error, upper_error can be specified at a time")
+    if values_only:   clean_content = lambda e: e.split('\n')[0]
+    elif lower_error: clean_content = lambda e: (e.split('\n')[-1].replace('(', '')
+                                                  .replace(')', '').replace(' ', '')
+                                                  .split(',')[0])
+    elif upper_error: clean_content = lambda e: (e.split('\n')[-1].replace('(', '')
+                                                  .replace(')', '').replace(' ', '')
+                                                  .split(',')[-1])
+    else:             clean_content = lambda e: e
+
+
+    leaguetable = leaguetable.applymap(clean_content)
+
+    if any((values_only, lower_error, upper_error)):
+        np.fill_diagonal(leaguetable.values, [np.nan] * len(leaguetable))
+        leaguetable = leaguetable.astype(np.float)
+
     confidence_map = {k: n for n, k in enumerate(['low', 'medium', 'high'])}
     treatments = np.unique(net_data[['treat1', 'treat2']].dropna().values.flatten())
     robs = (net_data.groupby(['treat1', 'treat2']).rob.mean().reset_index()
@@ -41,6 +60,9 @@ def _print_league_table(net_data, league_table_data, toggle_cinema=False,
                                       transform: translate(0px, -24px); padding: 0.6em; border-radius: 0.5em;""")
          )
     else:
+        if not any((values_only, lower_error, upper_error)):
+            for c in leaguetable:
+                leaguetable[c] = leaguetable[c].str.replace('\n', ' ')
         return leaguetable
 
 
