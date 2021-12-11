@@ -19,6 +19,7 @@ class Loader:
     league_table_data = LEAGUE_TABLE_DATA
 
     def __init__(self):
+        self._states = dict(data='default')
         __TEMP_PATH = 'nmastudio/__temp'
         if os.path.exists(__TEMP_PATH):
             shutil.rmtree(__TEMP_PATH)

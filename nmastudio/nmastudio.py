@@ -22,6 +22,9 @@ if DEBUG:
 
 class NMA(Loader):
 
+    def __init__(self):
+        super().__init__()
+
     def plot_network(self, layout='circle', pie=False, height=None, width=None):
         """
         Notes
@@ -88,7 +91,6 @@ class NMA(Loader):
                                                                  lower_error=lower_error,
                                                                  upper_error=upper_error)
 
-
     def __repr__(self):
         sb, eb = ("\033[1m","\033[0;0m") if self._is_ipython else ('','')  # Bold
         sr, er = ("\x1b[31m", "\x1b[0m") if self._is_ipython else ('','')  # Red
@@ -102,10 +104,10 @@ class NMA(Loader):
             _svg_cnn = f.read()
         html_repr = _svg_cnn + f"""</br>
         <span style="white-space: nowrap;">
-        <b>DISC connection</b>:
+        <b>Dataset</b>:
         <span style="color:green; 
                      background-color:red"; 
-        white-space: nowrap;>Active</span>
+        white-space: nowrap;>{'Default' if self._states['data']=='default' else 'User upload'}</span>
         </span></br>
         <span style="white-space: nowrap;">
         <span style="color: gray">Engine:</span>
@@ -113,15 +115,23 @@ class NMA(Loader):
         </span></br>
         <span style="white-space: nowrap;">
         <span style="color: gray">Selected database:</span>
-        <span white-space: nowrap;>db</span>
+        <span white-space: nowrap;>{self._states['data']}</span>
         </span></br>
         </br>
         <span style="white-space: nowrap;">
-        <b>Spark Connection</b>:
-        <span style="color:green;
-                            background-color:red"; 
-        white-space: nowrap;>XXX</span>
-        </span>"""
+        <b>Consistency checks</b></br>
+        {self.consistency_checks().to_html()}
+        </br>
+        <b>Available methods</b>:</br>
+        <span white-space: nowrap;>plot_network(<span style="color: orange">layout</span>='circle', 
+        <span style="color: orange">pie</span>=False, <span style="color: orange">height</span>=None, 
+        <span style="color: orange">width</span>=None)</span></br>
+        <span white-space: nowrap;>plot_forest()</span></br>
+        <span white-space: nowrap;>plot_funnels(node_ref)</span></br>
+        <span white-space: nowrap;>plot_ranking(type='heatmap', outcomes=None)</span></br>
+        <span white-space: nowrap;>plot_funnels(node_ref)</span></br>
+        <span white-space: nowrap;>league_table(subset=None, values_only=False, lower_error=False, upper_error=False)</span>
+        """
         # display(HTML(html_repr))
         return html_repr
 
