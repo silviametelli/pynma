@@ -37,8 +37,30 @@ def _print_league_table(net_data, league_table_data, toggle_cinema=False,
             .pivot_table(index='treat2', columns='treat1', values='rob')
             .reindex(index=treatments, columns=treatments, fill_value=np.nan))
     if subset:
+
+        tril_order = pd.DataFrame(np.tril(np.ones(leaguetable.shape)),
+                                      columns=leaguetable.columns,
+                                      index=leaguetable.columns)
+        tril_order = tril_order.loc[subset, subset]
+        filter = np.tril(tril_order==0)
+        filter += filter.T # Rubbish inverting of rows and columns common in meta-analysis visualization
+
         leaguetable = leaguetable.loc[subset, subset]
+        leaguetable = leaguetable.loc[subset, subset]
+        leaguetable_values = leaguetable.values
+        leaguetable_values[filter] = leaguetable_values.T[filter]
+        leaguetable = pd.DataFrame(leaguetable_values,
+                                       columns=leaguetable.columns,
+                                       index=leaguetable.columns)
+
         robs = robs.loc[subset, subset]
+        robs_values = robs.values
+        robs_values[filter] = robs_values.T[filter]
+        robs = pd.DataFrame(robs_values,
+                                columns=robs.columns,
+                                index=robs.columns)
+
+        treatments = subset
 
     if _IS_JUPYTER:
         if any((values_only, lower_error, upper_error)):
