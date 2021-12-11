@@ -13,7 +13,7 @@ CX1 = '#1A242B'
 CX2 = '#d6d6d6'
 
 CMAP = ['purple', 'green', 'blue', 'red', 'black', 'yellow', 'orange', 'pink', 'brown', 'grey']
-def get_network(df):
+def get_network(df, sep=False):
     df = df.dropna(subset=['TE', 'seTE'])
     if "treat1_class" and "treat2_class" in df.columns:
         df_treat = df.treat1.dropna().append(df.treat2.dropna()).reset_index(drop=True)
@@ -54,7 +54,10 @@ def get_network(df):
                           'pie1': r1/(r1+r2+r3),
                           'pie2':r2/(r1+r2+r3),
                           'pie3': r3/(r1+r2+r3)}} for target, size, r1, r2, r3 in all_nodes_sized.values]
-    return cy_edges + cy_nodes
+    if sep:
+        return cy_edges, cy_nodes
+    else:
+        return cy_edges + cy_nodes
 
 
 

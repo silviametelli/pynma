@@ -1,3 +1,4 @@
+import os, shutil
 import pandas as pd
 from storage import (NET_DATA, RANKING_DATA,
                      FUNNEL_DATA, FUNNEL_DATA_OUT2,
@@ -18,6 +19,10 @@ class Loader:
     league_table_data = LEAGUE_TABLE_DATA
 
     def __init__(self):
+        __TEMP_PATH = 'nmastudio/__temp'
+        if os.path.exists(__TEMP_PATH):
+            shutil.rmtree(__TEMP_PATH)
+        os.makedirs(__TEMP_PATH, exist_ok=True)
         self._is_jupyter = _IS_JUPYTER
         self._is_ipython = _IS_IPYTHON
 

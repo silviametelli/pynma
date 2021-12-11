@@ -1,0 +1,2447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Treatments network</title>
+</head>
+<body>
+
+
+<!-- Load require.js. Delete this if your page already loads require.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js" crossorigin="anonymous"></script>
+
+<script type="application/vnd.jupyter.widget-state+json">
+{
+  "version_major": 2,
+  "version_minor": 0,
+  "state": {
+    "1814dd6cb06e4247932fe8772ad69686": {
+      "model_name": "GraphModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "_adj": {},
+        "edges": [],
+        "nodes": []
+      }
+    },
+    "234733b01bc443ab9dce1713b252df98": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "1.2.0",
+      "state": {}
+    },
+    "4f160675c8ee418da674aef79834a27e": {
+      "model_name": "CytoscapeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "_dom_classes": [],
+        "cytoscape_layout": {
+          "name": "circle"
+        },
+        "cytoscape_style": [
+          {
+            "selector": "node",
+            "style": {
+              "opacity": 1,
+              "background-color": "#07ABA0",
+              "node-text-rotation": "autorotate",
+              "line-color": "black",
+              "label": "data(label)",
+              "shape": "circle",
+              "color": "black"
+            }
+          },
+          {
+            "selector": "edge",
+            "style": {
+              "curve-style": "bezier",
+              "width": "data(weight)",
+              "opacity": 0.75
+            }
+          }
+        ],
+        "graph": "IPY_MODEL_88d5536796d4447293cd32f91cbfb135",
+        "layout": "IPY_MODEL_234733b01bc443ab9dce1713b252df98",
+        "rendered_position": {
+          "renderedPosition": {
+            "x": 100,
+            "y": 100
+          }
+        }
+      }
+    },
+    "88d5536796d4447293cd32f91cbfb135": {
+      "model_name": "GraphModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "_adj": {
+          "ADA": {
+            "GUSEL": 1,
+            "MTX": 1,
+            "PBO": 1,
+            "RISAN": 1
+          },
+          "APRE": {
+            "ETA": 1,
+            "PBO": 1
+          },
+          "BIME": {
+            "PBO": 1
+          },
+          "BRODA": {
+            "PBO": 1,
+            "USK": 1
+          },
+          "CERTO": {
+            "ETA": 1,
+            "PBO": 1
+          },
+          "CICLO": {
+            "MTX": 1
+          },
+          "ETA": {
+            "APRE": 1,
+            "CERTO": 1,
+            "IFX": 1,
+            "IXE": 1,
+            "MTX": 1,
+            "PBO": 1,
+            "SECU": 1,
+            "TILDRA": 1,
+            "TOFA": 1,
+            "USK": 1
+          },
+          "FUM": {
+            "GUSEL": 1,
+            "IXE": 1,
+            "MTX": 1,
+            "PBO": 1,
+            "RISAN": 1,
+            "SECU": 1
+          },
+          "GUSEL": {
+            "ADA": 1,
+            "FUM": 1,
+            "IXE": 1,
+            "PBO": 1,
+            "SECU": 1
+          },
+          "IFX": {
+            "ETA": 1,
+            "MTX": 1,
+            "PBO": 1
+          },
+          "IXE": {
+            "ETA": 1,
+            "FUM": 1,
+            "GUSEL": 1,
+            "MTX": 1,
+            "PBO": 1,
+            "USK": 1
+          },
+          "MIRI": {
+            "PBO": 1
+          },
+          "MTX": {
+            "ADA": 1,
+            "CICLO": 1,
+            "ETA": 1,
+            "FUM": 1,
+            "IFX": 1,
+            "IXE": 1,
+            "PBO": 1
+          },
+          "PBO": {
+            "ADA": 1,
+            "APRE": 1,
+            "BIME": 1,
+            "BRODA": 1,
+            "CERTO": 1,
+            "ETA": 1,
+            "FUM": 1,
+            "GUSEL": 1,
+            "IFX": 1,
+            "IXE": 1,
+            "MIRI": 1,
+            "MTX": 1,
+            "RISAN": 1,
+            "SECU": 1,
+            "TILDRA": 1,
+            "TOFA": 1,
+            "TYK2": 1,
+            "USK": 1
+          },
+          "RISAN": {
+            "ADA": 1,
+            "FUM": 1,
+            "PBO": 1,
+            "SECU": 1,
+            "USK": 1
+          },
+          "SECU": {
+            "ETA": 1,
+            "FUM": 1,
+            "GUSEL": 1,
+            "PBO": 1,
+            "RISAN": 1,
+            "USK": 1
+          },
+          "TILDRA": {
+            "ETA": 1,
+            "PBO": 1
+          },
+          "TOFA": {
+            "ETA": 1,
+            "PBO": 1
+          },
+          "TYK2": {
+            "PBO": 1
+          },
+          "USK": {
+            "BRODA": 1,
+            "ETA": 1,
+            "IXE": 1,
+            "PBO": 1,
+            "RISAN": 1,
+            "SECU": 1
+          }
+        },
+        "edges": [
+          "IPY_MODEL_03de87b36af548ebb21659d7c39e031a",
+          "IPY_MODEL_40491c3a2dd246afa6f2ef8554a5886d",
+          "IPY_MODEL_8222ea04780f4102a8d580fe26194e24",
+          "IPY_MODEL_0a219842c87040f980386fa5eb4ffded",
+          "IPY_MODEL_629a0008e24a437584f9638aa5e37b7b",
+          "IPY_MODEL_dd477740bfa245628129df78325457b7",
+          "IPY_MODEL_c1f52d3800fa4e74beefe2bfb9e8ba93",
+          "IPY_MODEL_038082a7757d41c09df4c7fdda664534",
+          "IPY_MODEL_dd4c0ed485c44345975281e4bdbba68d",
+          "IPY_MODEL_bff3125ff9cb4a3699739c32a0801af6",
+          "IPY_MODEL_698bba2f111b4abf8ad6f41f2a0b56db",
+          "IPY_MODEL_2e5aec97cf174b238f9afb0e28f3e946",
+          "IPY_MODEL_ff2873e4cf0f4b5f89327babf0ef10e3",
+          "IPY_MODEL_2c282f59bcbd4c22b26352aefce736b0",
+          "IPY_MODEL_5c4ff07a226c4dc58d58bbcc9c495dc7",
+          "IPY_MODEL_13fc0f46c5e84ff49586e464be90a56b",
+          "IPY_MODEL_6b8d7ffe78d34127adb9a4baa35c47d9",
+          "IPY_MODEL_f4f6a51defea4e48995d592556b6ad30",
+          "IPY_MODEL_777f0bb86a694fd48698cd7bd8087d04",
+          "IPY_MODEL_e036beb9d42d4cf0bdc868c1914bf124",
+          "IPY_MODEL_b3ae2cc00d554066bcb77ad34f079e6f",
+          "IPY_MODEL_97f19fb2a056413a95a66e1ccedbfd00",
+          "IPY_MODEL_9c5ab794610c4d04846f536d84db049c",
+          "IPY_MODEL_db99839a94c440ebbf933faabb477159",
+          "IPY_MODEL_3f6c8d21fca94a6ea7a8958f4a6b9c5e",
+          "IPY_MODEL_f84e78e90a964447b5afe2d061a2a6af",
+          "IPY_MODEL_2e2991d7b39841edb97fd3ae31775e3f",
+          "IPY_MODEL_12bf1f319c7640339ad4a5cdbb6e8948",
+          "IPY_MODEL_ece6a8f4aa514cad8e88082ee2b92129",
+          "IPY_MODEL_babe81b8be734917acca7b5828c60577",
+          "IPY_MODEL_e61e1e0060d044ffa9d29eda42cac6d5",
+          "IPY_MODEL_7f2c515ea8e54c51816f3d999eadeada",
+          "IPY_MODEL_442349655da349109918e668275a2690",
+          "IPY_MODEL_cb32d6136e2d4a91b318d73f62d2b795",
+          "IPY_MODEL_d1d98dea81e64f4181fbef1a87fe502f",
+          "IPY_MODEL_94f487ed3e144571b232cf92ba51e381",
+          "IPY_MODEL_f9e6c11eeb0c43ea8346f96a0a6bcf16",
+          "IPY_MODEL_86c36f389411484f94b2e7ed66e08616",
+          "IPY_MODEL_5a1fc67fee874054924a9aa8098922a0",
+          "IPY_MODEL_ac621092284440a8bd447408c8dea663",
+          "IPY_MODEL_c1edf6068b344ba4a2ed10b5da49a7e2",
+          "IPY_MODEL_5cd5d8cbee2a4ba2bc95ad53e3403e2f",
+          "IPY_MODEL_36fc368f5e8b4c35a2ea3f3678b23fe8",
+          "IPY_MODEL_d84121c9e3c841f49f279fd37a971bcd",
+          "IPY_MODEL_41ca875a7d7e438e9e94f56b0caeabd0"
+        ],
+        "nodes": [
+          "IPY_MODEL_7e7d2bb4a375430ab5fae2f5949e63a6",
+          "IPY_MODEL_d6591b4ddd8b4005b93a68e9c7652482",
+          "IPY_MODEL_5af0362c00654955ad29a310ba37dfd0",
+          "IPY_MODEL_88a3f00a32db4dda9f115367b594fb45",
+          "IPY_MODEL_680a942a9f72488cb868201dc999290b",
+          "IPY_MODEL_14701ade38f24901b5f9abccdad4dbfa",
+          "IPY_MODEL_b68bbc43c40c4d1da2f635795f4420bd",
+          "IPY_MODEL_6f61bb249b4147ed9fdf8db2fcac0ad2",
+          "IPY_MODEL_3be0ed0e1198423f9d9f38b20fb62237",
+          "IPY_MODEL_909fa783adc7426da14229eb296093bf",
+          "IPY_MODEL_a9a529a281684bb59b182515d4fd36a9",
+          "IPY_MODEL_ded77fa213d7417e85d206f7880ff522",
+          "IPY_MODEL_8ba1d26ee3424a159d2a3a541d49c924",
+          "IPY_MODEL_05c8042bf8e142d5afd15d1ce98b77f0",
+          "IPY_MODEL_ca46d470200c4ee4999bbc4d632eedc5",
+          "IPY_MODEL_0e9ea16c81f74068a4a4c0e5c1ab3beb",
+          "IPY_MODEL_3d260314e4124b6ab4d0f0c8fef95d4c",
+          "IPY_MODEL_6e8405fa20964b86b35ab6a4b6cb3a5b",
+          "IPY_MODEL_17797ec90e564eb2b08e33b81f383402",
+          "IPY_MODEL_30ada165ca884c10bc74b3826834fad6"
+        ]
+      }
+    },
+    "7e7d2bb4a375430ab5fae2f5949e63a6": {
+      "model_name": "NodeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "classes": "purple",
+        "data": {
+          "id": "ADA",
+          "label": "ADA",
+          "n_class": 2,
+          "size": 33.4039710737261,
+          "pie1": 0.6923076923076923,
+          "pie2": 0.15384615384615385,
+          "pie3": 0.15384615384615385
+        },
+        "position": {}
+      }
+    },
+    "d6591b4ddd8b4005b93a68e9c7652482": {
+      "model_name": "NodeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "classes": "purple",
+        "data": {
+          "id": "APRE",
+          "label": "APRE",
+          "n_class": 2,
+          "size": 23.798114904221723,
+          "pie1": 0.7142857142857143,
+          "pie2": 0.2857142857142857,
+          "pie3": 0.0
+        },
+        "position": {}
+      }
+    },
+    "5af0362c00654955ad29a310ba37dfd0": {
+      "model_name": "NodeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "classes": "purple",
+        "data": {
+          "id": "BIME",
+          "label": "BIME",
+          "n_class": 2,
+          "size": 9.25262599364334,
+          "pie1": 1.0,
+          "pie2": 0.0,
+          "pie3": 0.0
+        },
+        "position": {}
+      }
+    },
+    "88a3f00a32db4dda9f115367b594fb45": {
+      "model_name": "NodeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "classes": "purple",
+        "data": {
+          "id": "BRODA",
+          "label": "BRODA",
+          "n_class": 2,
+          "size": 33.77159737981324,
+          "pie1": 0.2857142857142857,
+          "pie2": 0.5714285714285714,
+          "pie3": 0.14285714285714285
+        },
+        "position": {}
+      }
+    },
+    "680a942a9f72488cb868201dc999290b": {
+      "model_name": "NodeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "classes": "purple",
+        "data": {
+          "id": "CERTO",
+          "label": "CERTO",
+          "n_class": 2,
+          "size": 18.438405584648308,
+          "pie1": 0.6666666666666666,
+          "pie2": 0.3333333333333333,
+          "pie3": 0.0
+        },
+        "position": {}
+      }
+    },
+    "14701ade38f24901b5f9abccdad4dbfa": {
+      "model_name": "NodeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "classes": "purple",
+        "data": {
+          "id": "CICLO",
+          "label": "CICLO",
+          "n_class": 2,
+          "size": 6.018311690041322,
+          "pie1": 0.0,
+          "pie2": 0.0,
+          "pie3": 1.0
+        },
+        "position": {}
+      }
+    },
+    "b68bbc43c40c4d1da2f635795f4420bd": {
+      "model_name": "NodeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "classes": "purple",
+        "data": {
+          "id": "ETA",
+          "label": "ETA",
+          "n_class": 2,
+          "size": 46.22752924730884,
+          "pie1": 0.6818181818181818,
+          "pie2": 0.18181818181818182,
+          "pie3": 0.13636363636363635
+        },
+        "position": {}
+      }
+    },
+    "6f61bb249b4147ed9fdf8db2fcac0ad2": {
+      "model_name": "NodeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "classes": "purple",
+        "data": {
+          "id": "FUM",
+          "label": "FUM",
+          "n_class": 2,
+          "size": 19.353255773378788,
+          "pie1": 0.0,
+          "pie2": 0.125,
+          "pie3": 0.875
+        },
+        "position": {}
+      }
+    },
+    "3be0ed0e1198423f9d9f38b20fb62237": {
+      "model_name": "NodeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "classes": "purple",
+        "data": {
+          "id": "GUSEL",
+          "label": "GUSEL",
+          "n_class": 2,
+          "size": 35.3961204412737,
+          "pie1": 0.6363636363636364,
+          "pie2": 0.09090909090909091,
+          "pie3": 0.2727272727272727
+        },
+        "position": {}
+      }
+    },
+    "909fa783adc7426da14229eb296093bf": {
+      "model_name": "NodeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "classes": "purple",
+        "data": {
+          "id": "IFX",
+          "label": "IFX",
+          "n_class": 2,
+          "size": 24.938226915656333,
+          "pie1": 0.42857142857142855,
+          "pie2": 0.14285714285714285,
+          "pie3": 0.42857142857142855
+        },
+        "position": {}
+      }
+    },
+    "a9a529a281684bb59b182515d4fd36a9": {
+      "model_name": "NodeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "classes": "purple",
+        "data": {
+          "id": "IXE",
+          "label": "IXE",
+          "n_class": 2,
+          "size": 33.826396726487,
+          "pie1": 0.8,
+          "pie2": 0.0,
+          "pie3": 0.2
+        },
+        "position": {}
+      }
+    },
+    "ded77fa213d7417e85d206f7880ff522": {
+      "model_name": "NodeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "classes": "green",
+        "data": {
+          "id": "MIRI",
+          "label": "MIRI",
+          "n_class": 2,
+          "size": 7.9355869681573905,
+          "pie1": 1.0,
+          "pie2": 0.0,
+          "pie3": 0.0
+        },
+        "position": {}
+      }
+    },
+    "8ba1d26ee3424a159d2a3a541d49c924": {
+      "model_name": "NodeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "classes": "purple",
+        "data": {
+          "id": "MTX",
+          "label": "MTX",
+          "n_class": 2,
+          "size": 22.899081043608437,
+          "pie1": 0.25,
+          "pie2": 0.0625,
+          "pie3": 0.6875
+        },
+        "position": {}
+      }
+    },
+    "05c8042bf8e142d5afd15d1ce98b77f0": {
+      "model_name": "NodeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "classes": "purple",
+        "data": {
+          "id": "PBO",
+          "label": "PBO",
+          "n_class": 2,
+          "size": 70.0,
+          "pie1": 0.6907216494845361,
+          "pie2": 0.1958762886597938,
+          "pie3": 0.1134020618556701
+        },
+        "position": {}
+      }
+    },
+    "ca46d470200c4ee4999bbc4d632eedc5": {
+      "model_name": "NodeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "classes": "purple",
+        "data": {
+          "id": "RISAN",
+          "label": "RISAN",
+          "n_class": 2,
+          "size": 24.789241817163397,
+          "pie1": 0.7,
+          "pie2": 0.2,
+          "pie3": 0.1
+        },
+        "position": {}
+      }
+    },
+    "0e9ea16c81f74068a4a4c0e5c1ab3beb": {
+      "model_name": "NodeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "classes": "purple",
+        "data": {
+          "id": "SECU",
+          "label": "SECU",
+          "n_class": 2,
+          "size": 39.740125999394,
+          "pie1": 0.7894736842105263,
+          "pie2": 0.05263157894736842,
+          "pie3": 0.15789473684210525
+        },
+        "position": {}
+      }
+    },
+    "3d260314e4124b6ab4d0f0c8fef95d4c": {
+      "model_name": "NodeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "classes": "purple",
+        "data": {
+          "id": "TILDRA",
+          "label": "TILDRA",
+          "n_class": 2,
+          "size": 20.40908791158028,
+          "pie1": 0.75,
+          "pie2": 0.25,
+          "pie3": 0.0
+        },
+        "position": {}
+      }
+    },
+    "6e8405fa20964b86b35ab6a4b6cb3a5b": {
+      "model_name": "NodeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "classes": "green",
+        "data": {
+          "id": "TOFA",
+          "label": "TOFA",
+          "n_class": 2,
+          "size": 25.16822860682444,
+          "pie1": 0.5,
+          "pie2": 0.5,
+          "pie3": 0.0
+        },
+        "position": {}
+      }
+    },
+    "17797ec90e564eb2b08e33b81f383402": {
+      "model_name": "NodeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "classes": "purple",
+        "data": {
+          "id": "TYK2",
+          "label": "TYK2",
+          "n_class": 2,
+          "size": 9.558942019520222,
+          "pie1": 1.0,
+          "pie2": 0.0,
+          "pie3": 0.0
+        },
+        "position": {}
+      }
+    },
+    "30ada165ca884c10bc74b3826834fad6": {
+      "model_name": "NodeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "classes": "purple",
+        "data": {
+          "id": "USK",
+          "label": "USK",
+          "n_class": 2,
+          "size": 41.81929486411196,
+          "pie1": 0.5789473684210527,
+          "pie2": 0.3157894736842105,
+          "pie3": 0.10526315789473684
+        },
+        "position": {}
+      }
+    },
+    "03de87b36af548ebb21659d7c39e031a": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "ADA",
+          "target": "GUSEL",
+          "weight": 3,
+          "weight_lab": 3
+        }
+      }
+    },
+    "40491c3a2dd246afa6f2ef8554a5886d": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "ADA",
+          "target": "MTX",
+          "weight": 1,
+          "weight_lab": 1
+        }
+      }
+    },
+    "8222ea04780f4102a8d580fe26194e24": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "ADA",
+          "target": "PBO",
+          "weight": 9,
+          "weight_lab": 9
+        }
+      }
+    },
+    "0a219842c87040f980386fa5eb4ffded": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "ADA",
+          "target": "RISAN",
+          "weight": 1,
+          "weight_lab": 1
+        }
+      }
+    },
+    "629a0008e24a437584f9638aa5e37b7b": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "APRE",
+          "target": "ETA",
+          "weight": 1,
+          "weight_lab": 1
+        }
+      }
+    },
+    "dd477740bfa245628129df78325457b7": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "APRE",
+          "target": "PBO",
+          "weight": 6,
+          "weight_lab": 6
+        }
+      }
+    },
+    "c1f52d3800fa4e74beefe2bfb9e8ba93": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "BIME",
+          "target": "PBO",
+          "weight": 1,
+          "weight_lab": 1
+        }
+      }
+    },
+    "038082a7757d41c09df4c7fdda664534": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "BRODA",
+          "target": "PBO",
+          "weight": 5,
+          "weight_lab": 5
+        }
+      }
+    },
+    "dd4c0ed485c44345975281e4bdbba68d": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "BRODA",
+          "target": "USK",
+          "weight": 2,
+          "weight_lab": 2
+        }
+      }
+    },
+    "bff3125ff9cb4a3699739c32a0801af6": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "CERTO",
+          "target": "ETA",
+          "weight": 1,
+          "weight_lab": 1
+        }
+      }
+    },
+    "698bba2f111b4abf8ad6f41f2a0b56db": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "CERTO",
+          "target": "PBO",
+          "weight": 5,
+          "weight_lab": 5
+        }
+      }
+    },
+    "2e5aec97cf174b238f9afb0e28f3e946": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "CICLO",
+          "target": "MTX",
+          "weight": 3,
+          "weight_lab": 3
+        }
+      }
+    },
+    "ff2873e4cf0f4b5f89327babf0ef10e3": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "ETA",
+          "target": "IFX",
+          "weight": 1,
+          "weight_lab": 1
+        }
+      }
+    },
+    "2c282f59bcbd4c22b26352aefce736b0": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "ETA",
+          "target": "IXE",
+          "weight": 2,
+          "weight_lab": 2
+        }
+      }
+    },
+    "5c4ff07a226c4dc58d58bbcc9c495dc7": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "ETA",
+          "target": "MTX",
+          "weight": 1,
+          "weight_lab": 1
+        }
+      }
+    },
+    "13fc0f46c5e84ff49586e464be90a56b": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "ETA",
+          "target": "PBO",
+          "weight": 12,
+          "weight_lab": 12
+        }
+      }
+    },
+    "6b8d7ffe78d34127adb9a4baa35c47d9": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "ETA",
+          "target": "SECU",
+          "weight": 1,
+          "weight_lab": 1
+        }
+      }
+    },
+    "f4f6a51defea4e48995d592556b6ad30": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "ETA",
+          "target": "TILDRA",
+          "weight": 1,
+          "weight_lab": 1
+        }
+      }
+    },
+    "777f0bb86a694fd48698cd7bd8087d04": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "ETA",
+          "target": "TOFA",
+          "weight": 1,
+          "weight_lab": 1
+        }
+      }
+    },
+    "e036beb9d42d4cf0bdc868c1914bf124": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "ETA",
+          "target": "USK",
+          "weight": 1,
+          "weight_lab": 1
+        }
+      }
+    },
+    "b3ae2cc00d554066bcb77ad34f079e6f": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "FUM",
+          "target": "GUSEL",
+          "weight": 1,
+          "weight_lab": 1
+        }
+      }
+    },
+    "97f19fb2a056413a95a66e1ccedbfd00": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "FUM",
+          "target": "IXE",
+          "weight": 1,
+          "weight_lab": 1
+        }
+      }
+    },
+    "9c5ab794610c4d04846f536d84db049c": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "FUM",
+          "target": "MTX",
+          "weight": 2,
+          "weight_lab": 2
+        }
+      }
+    },
+    "db99839a94c440ebbf933faabb477159": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "FUM",
+          "target": "PBO",
+          "weight": 2,
+          "weight_lab": 2
+        }
+      }
+    },
+    "3f6c8d21fca94a6ea7a8958f4a6b9c5e": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "FUM",
+          "target": "RISAN",
+          "weight": 1,
+          "weight_lab": 1
+        }
+      }
+    },
+    "f84e78e90a964447b5afe2d061a2a6af": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "FUM",
+          "target": "SECU",
+          "weight": 1,
+          "weight_lab": 1
+        }
+      }
+    },
+    "2e2991d7b39841edb97fd3ae31775e3f": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "GUSEL",
+          "target": "IXE",
+          "weight": 1,
+          "weight_lab": 1
+        }
+      }
+    },
+    "12bf1f319c7640339ad4a5cdbb6e8948": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "GUSEL",
+          "target": "PBO",
+          "weight": 5,
+          "weight_lab": 5
+        }
+      }
+    },
+    "ece6a8f4aa514cad8e88082ee2b92129": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "GUSEL",
+          "target": "SECU",
+          "weight": 1,
+          "weight_lab": 1
+        }
+      }
+    },
+    "babe81b8be734917acca7b5828c60577": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "IFX",
+          "target": "MTX",
+          "weight": 1,
+          "weight_lab": 1
+        }
+      }
+    },
+    "e61e1e0060d044ffa9d29eda42cac6d5": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "IFX",
+          "target": "PBO",
+          "weight": 5,
+          "weight_lab": 5
+        }
+      }
+    },
+    "7f2c515ea8e54c51816f3d999eadeada": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "IXE",
+          "target": "MTX",
+          "weight": 1,
+          "weight_lab": 1
+        }
+      }
+    },
+    "442349655da349109918e668275a2690": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "IXE",
+          "target": "PBO",
+          "weight": 4,
+          "weight_lab": 4
+        }
+      }
+    },
+    "cb32d6136e2d4a91b318d73f62d2b795": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "IXE",
+          "target": "USK",
+          "weight": 1,
+          "weight_lab": 1
+        }
+      }
+    },
+    "d1d98dea81e64f4181fbef1a87fe502f": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "MIRI",
+          "target": "PBO",
+          "weight": 1,
+          "weight_lab": 1
+        }
+      }
+    },
+    "94f487ed3e144571b232cf92ba51e381": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "MTX",
+          "target": "PBO",
+          "weight": 7,
+          "weight_lab": 7
+        }
+      }
+    },
+    "f9e6c11eeb0c43ea8346f96a0a6bcf16": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "PBO",
+          "target": "RISAN",
+          "weight": 4,
+          "weight_lab": 4
+        }
+      }
+    },
+    "86c36f389411484f94b2e7ed66e08616": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "PBO",
+          "target": "SECU",
+          "weight": 13,
+          "weight_lab": 13
+        }
+      }
+    },
+    "5a1fc67fee874054924a9aa8098922a0": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "PBO",
+          "target": "TILDRA",
+          "weight": 3,
+          "weight_lab": 3
+        }
+      }
+    },
+    "ac621092284440a8bd447408c8dea663": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "PBO",
+          "target": "TOFA",
+          "weight": 5,
+          "weight_lab": 5
+        }
+      }
+    },
+    "c1edf6068b344ba4a2ed10b5da49a7e2": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "PBO",
+          "target": "TYK2",
+          "weight": 1,
+          "weight_lab": 1
+        }
+      }
+    },
+    "5cd5d8cbee2a4ba2bc95ad53e3403e2f": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "PBO",
+          "target": "USK",
+          "weight": 10,
+          "weight_lab": 10
+        }
+      }
+    },
+    "36fc368f5e8b4c35a2ea3f3678b23fe8": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "RISAN",
+          "target": "SECU",
+          "weight": 1,
+          "weight_lab": 1
+        }
+      }
+    },
+    "d84121c9e3c841f49f279fd37a971bcd": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "RISAN",
+          "target": "USK",
+          "weight": 3,
+          "weight_lab": 3
+        }
+      }
+    },
+    "41ca875a7d7e438e9e94f56b0caeabd0": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "SECU",
+          "target": "USK",
+          "weight": 2,
+          "weight_lab": 2
+        }
+      }
+    },
+    "420def0406ef40418d24b963051c9d8d": {
+      "model_name": "GraphModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "_adj": {},
+        "edges": [],
+        "nodes": []
+      }
+    },
+    "71a5a40e74b842d696479c6da24722b9": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "1.2.0",
+      "state": {}
+    },
+    "f20af19274344b48b66826b23efd4d86": {
+      "model_name": "CytoscapeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "_dom_classes": [],
+        "cytoscape_layout": {
+          "name": "circle"
+        },
+        "cytoscape_style": [
+          {
+            "selector": "node",
+            "style": {
+              "opacity": 1,
+              "background-color": "#07ABA0",
+              "node-text-rotation": "autorotate",
+              "line-color": "black",
+              "label": "data(label)",
+              "shape": "circle",
+              "color": "black"
+            }
+          },
+          {
+            "selector": "edge",
+            "style": {
+              "curve-style": "bezier",
+              "width": "data(weight)",
+              "opacity": 0.75
+            }
+          }
+        ],
+        "graph": "IPY_MODEL_2fa3f4d65a994f2caca5d46c45115261",
+        "layout": "IPY_MODEL_71a5a40e74b842d696479c6da24722b9",
+        "rendered_position": {
+          "renderedPosition": {
+            "x": 100,
+            "y": 100
+          }
+        }
+      }
+    },
+    "2fa3f4d65a994f2caca5d46c45115261": {
+      "model_name": "GraphModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "_adj": {
+          "ADA": {
+            "GUSEL": 1,
+            "MTX": 1,
+            "PBO": 1,
+            "RISAN": 1
+          },
+          "APRE": {
+            "ETA": 1,
+            "PBO": 1
+          },
+          "BIME": {
+            "PBO": 1
+          },
+          "BRODA": {
+            "PBO": 1,
+            "USK": 1
+          },
+          "CERTO": {
+            "ETA": 1,
+            "PBO": 1
+          },
+          "CICLO": {
+            "MTX": 1
+          },
+          "ETA": {
+            "APRE": 1,
+            "CERTO": 1,
+            "IFX": 1,
+            "IXE": 1,
+            "MTX": 1,
+            "PBO": 1,
+            "SECU": 1,
+            "TILDRA": 1,
+            "TOFA": 1,
+            "USK": 1
+          },
+          "FUM": {
+            "GUSEL": 1,
+            "IXE": 1,
+            "MTX": 1,
+            "PBO": 1,
+            "RISAN": 1,
+            "SECU": 1
+          },
+          "GUSEL": {
+            "ADA": 1,
+            "FUM": 1,
+            "IXE": 1,
+            "PBO": 1,
+            "SECU": 1
+          },
+          "IFX": {
+            "ETA": 1,
+            "MTX": 1,
+            "PBO": 1
+          },
+          "IXE": {
+            "ETA": 1,
+            "FUM": 1,
+            "GUSEL": 1,
+            "MTX": 1,
+            "PBO": 1,
+            "USK": 1
+          },
+          "MIRI": {
+            "PBO": 1
+          },
+          "MTX": {
+            "ADA": 1,
+            "CICLO": 1,
+            "ETA": 1,
+            "FUM": 1,
+            "IFX": 1,
+            "IXE": 1,
+            "PBO": 1
+          },
+          "PBO": {
+            "ADA": 1,
+            "APRE": 1,
+            "BIME": 1,
+            "BRODA": 1,
+            "CERTO": 1,
+            "ETA": 1,
+            "FUM": 1,
+            "GUSEL": 1,
+            "IFX": 1,
+            "IXE": 1,
+            "MIRI": 1,
+            "MTX": 1,
+            "RISAN": 1,
+            "SECU": 1,
+            "TILDRA": 1,
+            "TOFA": 1,
+            "TYK2": 1,
+            "USK": 1
+          },
+          "RISAN": {
+            "ADA": 1,
+            "FUM": 1,
+            "PBO": 1,
+            "SECU": 1,
+            "USK": 1
+          },
+          "SECU": {
+            "ETA": 1,
+            "FUM": 1,
+            "GUSEL": 1,
+            "PBO": 1,
+            "RISAN": 1,
+            "USK": 1
+          },
+          "TILDRA": {
+            "ETA": 1,
+            "PBO": 1
+          },
+          "TOFA": {
+            "ETA": 1,
+            "PBO": 1
+          },
+          "TYK2": {
+            "PBO": 1
+          },
+          "USK": {
+            "BRODA": 1,
+            "ETA": 1,
+            "IXE": 1,
+            "PBO": 1,
+            "RISAN": 1,
+            "SECU": 1
+          }
+        },
+        "edges": [
+          "IPY_MODEL_546d52076eff457198b678b6808e24d7",
+          "IPY_MODEL_89259e4b51424ca4a33e3c6fe6cbc55f",
+          "IPY_MODEL_d17ac9a1f2f54221a5995278d5c3b5d4",
+          "IPY_MODEL_38de124dd5384f67ad36f4c294764ef7",
+          "IPY_MODEL_80a94d2659134ecb93f0dbd5dba1ca72",
+          "IPY_MODEL_9b05d5528d5340c49bef927911927f5c",
+          "IPY_MODEL_51452a0003f843c29078c8c523497c03",
+          "IPY_MODEL_ce139969a38842c980c143c7667230ce",
+          "IPY_MODEL_226d2c2c74ec4dca9dde59d9dcd2020c",
+          "IPY_MODEL_68fdc2c45fd54e408cb68925151402ce",
+          "IPY_MODEL_797b9626e6a74fe3936b80fcefc6cb58",
+          "IPY_MODEL_6d0d98fbb5d347a3a4f5920d01200a9a",
+          "IPY_MODEL_4673d3a8338f49249ea740582727c921",
+          "IPY_MODEL_69c31b04193742d784d81477290b9130",
+          "IPY_MODEL_fe6c54c9879e4ec0a44ac3b4fe22fe54",
+          "IPY_MODEL_a3b75003e8104fe3873cf9d2ca42a740",
+          "IPY_MODEL_36ef6cac82b8403186234f6deb558e34",
+          "IPY_MODEL_276dff778e0b4f08ab53805db9df9f0e",
+          "IPY_MODEL_d8c3b4637c5846df9be094579e060922",
+          "IPY_MODEL_3ec5769900b14b0e9444c01df08acaee",
+          "IPY_MODEL_4ed074a8fc5c44818104f0c060d6436e",
+          "IPY_MODEL_0bb1905f230742acb4ac592ad9804e0a",
+          "IPY_MODEL_8e107259fed74ef88d730fd2e28ba18b",
+          "IPY_MODEL_5f41c6d21daf48cb9619164193bfbe4a",
+          "IPY_MODEL_568c4163136b4861bb02170423f60f44",
+          "IPY_MODEL_9e5edb1866ac4d6482af0c469a574b0d",
+          "IPY_MODEL_7f41e7bd00e84075a0ee3242dce472ec",
+          "IPY_MODEL_52d9e22bab024b9d9ae6cdc128da1019",
+          "IPY_MODEL_01240be0c43549549d2dee0062ab1d51",
+          "IPY_MODEL_78483bdd7ac644bf9a1f7555dc9bca14",
+          "IPY_MODEL_c301c91cafe0412eb44e21e1dfc7a975",
+          "IPY_MODEL_7ac9516e57744578be380e666b5e9428",
+          "IPY_MODEL_62fa1dbe9ca14bdc9ce2fa91ecd0ae17",
+          "IPY_MODEL_941f88d522914240958bc938bcb0dcee",
+          "IPY_MODEL_beb021d312414215965233c0be204219",
+          "IPY_MODEL_e4adfb48651a4e3584d2d9abdd259375",
+          "IPY_MODEL_fc74a3db32e64cb6ab0136a86671fdd0",
+          "IPY_MODEL_6e27f8423e0b407e92b636d1aee4c5f3",
+          "IPY_MODEL_194f9231c9a14a02ae0b6839bffec9b1",
+          "IPY_MODEL_d059472f3dfb4552801a68e28b2f0965",
+          "IPY_MODEL_4efbb8375d9042b88c72f058bb066190",
+          "IPY_MODEL_6948a0e69c4e4d60a1ed722042beb42e",
+          "IPY_MODEL_0b0aad4c070b4807946a32c09e654bfc",
+          "IPY_MODEL_4104195cf1004848be20299637d578a7",
+          "IPY_MODEL_377e0fe415d84183a38001a61ad205e4"
+        ],
+        "nodes": [
+          "IPY_MODEL_9c77f66be52142f6a5417534c461c910",
+          "IPY_MODEL_beee2b9978fa4368b89e7d7a47c89b5c",
+          "IPY_MODEL_b9c85a51429c44b49ce9c95f73ca8710",
+          "IPY_MODEL_c4719c1e9321417a909d5cfb77107dc6",
+          "IPY_MODEL_b759c6e89eea41a0a8fabf220e6d8f47",
+          "IPY_MODEL_ac105d8a08f04957872781191798a3d1",
+          "IPY_MODEL_ebe145b7f950479f8f481a2c2c0c3a2a",
+          "IPY_MODEL_39a52a9ffe774f27b34226dba1ca5419",
+          "IPY_MODEL_3819a55fc6db47058bce0e9e53c7747e",
+          "IPY_MODEL_db3dea8fce4b4f09b2ee2ed98271e3fc",
+          "IPY_MODEL_003a939949e54bc7aadde3947be5a5ad",
+          "IPY_MODEL_d5d68fd5b013407d967723f9412a1618",
+          "IPY_MODEL_3d4280a2f18046489ceaacc792e1d68a",
+          "IPY_MODEL_f19ae999a9c44c6a976d7c2ae096d091",
+          "IPY_MODEL_5dd7a4d0ed734ff4a7a7495b7f7a20a4",
+          "IPY_MODEL_bd9d8103a4b84d06988e29e67fd0474e",
+          "IPY_MODEL_19635444719948dc91b3243d5bf1a1e4",
+          "IPY_MODEL_3f13d8f356fd45529c78a8c836b8ea1b",
+          "IPY_MODEL_9196a78f7a994a40995f16da8f8e5387",
+          "IPY_MODEL_c1a74a8616554edda5e0277e49a84472"
+        ]
+      }
+    },
+    "9c77f66be52142f6a5417534c461c910": {
+      "model_name": "NodeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "classes": "purple",
+        "data": {
+          "id": "ADA",
+          "label": "ADA",
+          "n_class": 2,
+          "size": 33.4039710737261,
+          "pie1": 0.6923076923076923,
+          "pie2": 0.15384615384615385,
+          "pie3": 0.15384615384615385
+        },
+        "position": {}
+      }
+    },
+    "beee2b9978fa4368b89e7d7a47c89b5c": {
+      "model_name": "NodeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "classes": "purple",
+        "data": {
+          "id": "APRE",
+          "label": "APRE",
+          "n_class": 2,
+          "size": 23.798114904221723,
+          "pie1": 0.7142857142857143,
+          "pie2": 0.2857142857142857,
+          "pie3": 0.0
+        },
+        "position": {}
+      }
+    },
+    "b9c85a51429c44b49ce9c95f73ca8710": {
+      "model_name": "NodeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "classes": "purple",
+        "data": {
+          "id": "BIME",
+          "label": "BIME",
+          "n_class": 2,
+          "size": 9.25262599364334,
+          "pie1": 1.0,
+          "pie2": 0.0,
+          "pie3": 0.0
+        },
+        "position": {}
+      }
+    },
+    "c4719c1e9321417a909d5cfb77107dc6": {
+      "model_name": "NodeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "classes": "purple",
+        "data": {
+          "id": "BRODA",
+          "label": "BRODA",
+          "n_class": 2,
+          "size": 33.77159737981324,
+          "pie1": 0.2857142857142857,
+          "pie2": 0.5714285714285714,
+          "pie3": 0.14285714285714285
+        },
+        "position": {}
+      }
+    },
+    "b759c6e89eea41a0a8fabf220e6d8f47": {
+      "model_name": "NodeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "classes": "purple",
+        "data": {
+          "id": "CERTO",
+          "label": "CERTO",
+          "n_class": 2,
+          "size": 18.438405584648308,
+          "pie1": 0.6666666666666666,
+          "pie2": 0.3333333333333333,
+          "pie3": 0.0
+        },
+        "position": {}
+      }
+    },
+    "ac105d8a08f04957872781191798a3d1": {
+      "model_name": "NodeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "classes": "purple",
+        "data": {
+          "id": "CICLO",
+          "label": "CICLO",
+          "n_class": 2,
+          "size": 6.018311690041322,
+          "pie1": 0.0,
+          "pie2": 0.0,
+          "pie3": 1.0
+        },
+        "position": {}
+      }
+    },
+    "ebe145b7f950479f8f481a2c2c0c3a2a": {
+      "model_name": "NodeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "classes": "purple",
+        "data": {
+          "id": "ETA",
+          "label": "ETA",
+          "n_class": 2,
+          "size": 46.22752924730884,
+          "pie1": 0.6818181818181818,
+          "pie2": 0.18181818181818182,
+          "pie3": 0.13636363636363635
+        },
+        "position": {}
+      }
+    },
+    "39a52a9ffe774f27b34226dba1ca5419": {
+      "model_name": "NodeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "classes": "purple",
+        "data": {
+          "id": "FUM",
+          "label": "FUM",
+          "n_class": 2,
+          "size": 19.353255773378788,
+          "pie1": 0.0,
+          "pie2": 0.125,
+          "pie3": 0.875
+        },
+        "position": {}
+      }
+    },
+    "3819a55fc6db47058bce0e9e53c7747e": {
+      "model_name": "NodeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "classes": "purple",
+        "data": {
+          "id": "GUSEL",
+          "label": "GUSEL",
+          "n_class": 2,
+          "size": 35.3961204412737,
+          "pie1": 0.6363636363636364,
+          "pie2": 0.09090909090909091,
+          "pie3": 0.2727272727272727
+        },
+        "position": {}
+      }
+    },
+    "db3dea8fce4b4f09b2ee2ed98271e3fc": {
+      "model_name": "NodeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "classes": "purple",
+        "data": {
+          "id": "IFX",
+          "label": "IFX",
+          "n_class": 2,
+          "size": 24.938226915656333,
+          "pie1": 0.42857142857142855,
+          "pie2": 0.14285714285714285,
+          "pie3": 0.42857142857142855
+        },
+        "position": {}
+      }
+    },
+    "003a939949e54bc7aadde3947be5a5ad": {
+      "model_name": "NodeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "classes": "purple",
+        "data": {
+          "id": "IXE",
+          "label": "IXE",
+          "n_class": 2,
+          "size": 33.826396726487,
+          "pie1": 0.8,
+          "pie2": 0.0,
+          "pie3": 0.2
+        },
+        "position": {}
+      }
+    },
+    "d5d68fd5b013407d967723f9412a1618": {
+      "model_name": "NodeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "classes": "green",
+        "data": {
+          "id": "MIRI",
+          "label": "MIRI",
+          "n_class": 2,
+          "size": 7.9355869681573905,
+          "pie1": 1.0,
+          "pie2": 0.0,
+          "pie3": 0.0
+        },
+        "position": {}
+      }
+    },
+    "3d4280a2f18046489ceaacc792e1d68a": {
+      "model_name": "NodeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "classes": "purple",
+        "data": {
+          "id": "MTX",
+          "label": "MTX",
+          "n_class": 2,
+          "size": 22.899081043608437,
+          "pie1": 0.25,
+          "pie2": 0.0625,
+          "pie3": 0.6875
+        },
+        "position": {}
+      }
+    },
+    "f19ae999a9c44c6a976d7c2ae096d091": {
+      "model_name": "NodeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "classes": "purple",
+        "data": {
+          "id": "PBO",
+          "label": "PBO",
+          "n_class": 2,
+          "size": 70.0,
+          "pie1": 0.6907216494845361,
+          "pie2": 0.1958762886597938,
+          "pie3": 0.1134020618556701
+        },
+        "position": {}
+      }
+    },
+    "5dd7a4d0ed734ff4a7a7495b7f7a20a4": {
+      "model_name": "NodeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "classes": "purple",
+        "data": {
+          "id": "RISAN",
+          "label": "RISAN",
+          "n_class": 2,
+          "size": 24.789241817163397,
+          "pie1": 0.7,
+          "pie2": 0.2,
+          "pie3": 0.1
+        },
+        "position": {}
+      }
+    },
+    "bd9d8103a4b84d06988e29e67fd0474e": {
+      "model_name": "NodeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "classes": "purple",
+        "data": {
+          "id": "SECU",
+          "label": "SECU",
+          "n_class": 2,
+          "size": 39.740125999394,
+          "pie1": 0.7894736842105263,
+          "pie2": 0.05263157894736842,
+          "pie3": 0.15789473684210525
+        },
+        "position": {}
+      }
+    },
+    "19635444719948dc91b3243d5bf1a1e4": {
+      "model_name": "NodeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "classes": "purple",
+        "data": {
+          "id": "TILDRA",
+          "label": "TILDRA",
+          "n_class": 2,
+          "size": 20.40908791158028,
+          "pie1": 0.75,
+          "pie2": 0.25,
+          "pie3": 0.0
+        },
+        "position": {}
+      }
+    },
+    "3f13d8f356fd45529c78a8c836b8ea1b": {
+      "model_name": "NodeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "classes": "green",
+        "data": {
+          "id": "TOFA",
+          "label": "TOFA",
+          "n_class": 2,
+          "size": 25.16822860682444,
+          "pie1": 0.5,
+          "pie2": 0.5,
+          "pie3": 0.0
+        },
+        "position": {}
+      }
+    },
+    "9196a78f7a994a40995f16da8f8e5387": {
+      "model_name": "NodeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "classes": "purple",
+        "data": {
+          "id": "TYK2",
+          "label": "TYK2",
+          "n_class": 2,
+          "size": 9.558942019520222,
+          "pie1": 1.0,
+          "pie2": 0.0,
+          "pie3": 0.0
+        },
+        "position": {}
+      }
+    },
+    "c1a74a8616554edda5e0277e49a84472": {
+      "model_name": "NodeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "classes": "purple",
+        "data": {
+          "id": "USK",
+          "label": "USK",
+          "n_class": 2,
+          "size": 41.81929486411196,
+          "pie1": 0.5789473684210527,
+          "pie2": 0.3157894736842105,
+          "pie3": 0.10526315789473684
+        },
+        "position": {}
+      }
+    },
+    "546d52076eff457198b678b6808e24d7": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "ADA",
+          "target": "GUSEL",
+          "weight": 3,
+          "weight_lab": 3
+        }
+      }
+    },
+    "89259e4b51424ca4a33e3c6fe6cbc55f": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "ADA",
+          "target": "MTX",
+          "weight": 1,
+          "weight_lab": 1
+        }
+      }
+    },
+    "d17ac9a1f2f54221a5995278d5c3b5d4": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "ADA",
+          "target": "PBO",
+          "weight": 9,
+          "weight_lab": 9
+        }
+      }
+    },
+    "38de124dd5384f67ad36f4c294764ef7": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "ADA",
+          "target": "RISAN",
+          "weight": 1,
+          "weight_lab": 1
+        }
+      }
+    },
+    "80a94d2659134ecb93f0dbd5dba1ca72": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "APRE",
+          "target": "ETA",
+          "weight": 1,
+          "weight_lab": 1
+        }
+      }
+    },
+    "9b05d5528d5340c49bef927911927f5c": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "APRE",
+          "target": "PBO",
+          "weight": 6,
+          "weight_lab": 6
+        }
+      }
+    },
+    "51452a0003f843c29078c8c523497c03": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "BIME",
+          "target": "PBO",
+          "weight": 1,
+          "weight_lab": 1
+        }
+      }
+    },
+    "ce139969a38842c980c143c7667230ce": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "BRODA",
+          "target": "PBO",
+          "weight": 5,
+          "weight_lab": 5
+        }
+      }
+    },
+    "226d2c2c74ec4dca9dde59d9dcd2020c": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "BRODA",
+          "target": "USK",
+          "weight": 2,
+          "weight_lab": 2
+        }
+      }
+    },
+    "68fdc2c45fd54e408cb68925151402ce": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "CERTO",
+          "target": "ETA",
+          "weight": 1,
+          "weight_lab": 1
+        }
+      }
+    },
+    "797b9626e6a74fe3936b80fcefc6cb58": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "CERTO",
+          "target": "PBO",
+          "weight": 5,
+          "weight_lab": 5
+        }
+      }
+    },
+    "6d0d98fbb5d347a3a4f5920d01200a9a": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "CICLO",
+          "target": "MTX",
+          "weight": 3,
+          "weight_lab": 3
+        }
+      }
+    },
+    "4673d3a8338f49249ea740582727c921": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "ETA",
+          "target": "IFX",
+          "weight": 1,
+          "weight_lab": 1
+        }
+      }
+    },
+    "69c31b04193742d784d81477290b9130": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "ETA",
+          "target": "IXE",
+          "weight": 2,
+          "weight_lab": 2
+        }
+      }
+    },
+    "fe6c54c9879e4ec0a44ac3b4fe22fe54": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "ETA",
+          "target": "MTX",
+          "weight": 1,
+          "weight_lab": 1
+        }
+      }
+    },
+    "a3b75003e8104fe3873cf9d2ca42a740": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "ETA",
+          "target": "PBO",
+          "weight": 12,
+          "weight_lab": 12
+        }
+      }
+    },
+    "36ef6cac82b8403186234f6deb558e34": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "ETA",
+          "target": "SECU",
+          "weight": 1,
+          "weight_lab": 1
+        }
+      }
+    },
+    "276dff778e0b4f08ab53805db9df9f0e": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "ETA",
+          "target": "TILDRA",
+          "weight": 1,
+          "weight_lab": 1
+        }
+      }
+    },
+    "d8c3b4637c5846df9be094579e060922": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "ETA",
+          "target": "TOFA",
+          "weight": 1,
+          "weight_lab": 1
+        }
+      }
+    },
+    "3ec5769900b14b0e9444c01df08acaee": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "ETA",
+          "target": "USK",
+          "weight": 1,
+          "weight_lab": 1
+        }
+      }
+    },
+    "4ed074a8fc5c44818104f0c060d6436e": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "FUM",
+          "target": "GUSEL",
+          "weight": 1,
+          "weight_lab": 1
+        }
+      }
+    },
+    "0bb1905f230742acb4ac592ad9804e0a": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "FUM",
+          "target": "IXE",
+          "weight": 1,
+          "weight_lab": 1
+        }
+      }
+    },
+    "8e107259fed74ef88d730fd2e28ba18b": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "FUM",
+          "target": "MTX",
+          "weight": 2,
+          "weight_lab": 2
+        }
+      }
+    },
+    "5f41c6d21daf48cb9619164193bfbe4a": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "FUM",
+          "target": "PBO",
+          "weight": 2,
+          "weight_lab": 2
+        }
+      }
+    },
+    "568c4163136b4861bb02170423f60f44": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "FUM",
+          "target": "RISAN",
+          "weight": 1,
+          "weight_lab": 1
+        }
+      }
+    },
+    "9e5edb1866ac4d6482af0c469a574b0d": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "FUM",
+          "target": "SECU",
+          "weight": 1,
+          "weight_lab": 1
+        }
+      }
+    },
+    "7f41e7bd00e84075a0ee3242dce472ec": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "GUSEL",
+          "target": "IXE",
+          "weight": 1,
+          "weight_lab": 1
+        }
+      }
+    },
+    "52d9e22bab024b9d9ae6cdc128da1019": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "GUSEL",
+          "target": "PBO",
+          "weight": 5,
+          "weight_lab": 5
+        }
+      }
+    },
+    "01240be0c43549549d2dee0062ab1d51": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "GUSEL",
+          "target": "SECU",
+          "weight": 1,
+          "weight_lab": 1
+        }
+      }
+    },
+    "78483bdd7ac644bf9a1f7555dc9bca14": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "IFX",
+          "target": "MTX",
+          "weight": 1,
+          "weight_lab": 1
+        }
+      }
+    },
+    "c301c91cafe0412eb44e21e1dfc7a975": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "IFX",
+          "target": "PBO",
+          "weight": 5,
+          "weight_lab": 5
+        }
+      }
+    },
+    "7ac9516e57744578be380e666b5e9428": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "IXE",
+          "target": "MTX",
+          "weight": 1,
+          "weight_lab": 1
+        }
+      }
+    },
+    "62fa1dbe9ca14bdc9ce2fa91ecd0ae17": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "IXE",
+          "target": "PBO",
+          "weight": 4,
+          "weight_lab": 4
+        }
+      }
+    },
+    "941f88d522914240958bc938bcb0dcee": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "IXE",
+          "target": "USK",
+          "weight": 1,
+          "weight_lab": 1
+        }
+      }
+    },
+    "beb021d312414215965233c0be204219": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "MIRI",
+          "target": "PBO",
+          "weight": 1,
+          "weight_lab": 1
+        }
+      }
+    },
+    "e4adfb48651a4e3584d2d9abdd259375": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "MTX",
+          "target": "PBO",
+          "weight": 7,
+          "weight_lab": 7
+        }
+      }
+    },
+    "fc74a3db32e64cb6ab0136a86671fdd0": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "PBO",
+          "target": "RISAN",
+          "weight": 4,
+          "weight_lab": 4
+        }
+      }
+    },
+    "6e27f8423e0b407e92b636d1aee4c5f3": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "PBO",
+          "target": "SECU",
+          "weight": 13,
+          "weight_lab": 13
+        }
+      }
+    },
+    "194f9231c9a14a02ae0b6839bffec9b1": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "PBO",
+          "target": "TILDRA",
+          "weight": 3,
+          "weight_lab": 3
+        }
+      }
+    },
+    "d059472f3dfb4552801a68e28b2f0965": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "PBO",
+          "target": "TOFA",
+          "weight": 5,
+          "weight_lab": 5
+        }
+      }
+    },
+    "4efbb8375d9042b88c72f058bb066190": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "PBO",
+          "target": "TYK2",
+          "weight": 1,
+          "weight_lab": 1
+        }
+      }
+    },
+    "6948a0e69c4e4d60a1ed722042beb42e": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "PBO",
+          "target": "USK",
+          "weight": 10,
+          "weight_lab": 10
+        }
+      }
+    },
+    "0b0aad4c070b4807946a32c09e654bfc": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "RISAN",
+          "target": "SECU",
+          "weight": 1,
+          "weight_lab": 1
+        }
+      }
+    },
+    "4104195cf1004848be20299637d578a7": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "RISAN",
+          "target": "USK",
+          "weight": 3,
+          "weight_lab": 3
+        }
+      }
+    },
+    "377e0fe415d84183a38001a61ad205e4": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.2.2",
+      "state": {
+        "data": {
+          "source": "SECU",
+          "target": "USK",
+          "weight": 2,
+          "weight_lab": 2
+        }
+      }
+    }
+  }
+}
+</script>
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "f20af19274344b48b66826b23efd4d86"}
+</script>
+
+</body>
+</html>
