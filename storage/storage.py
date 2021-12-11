@@ -1,9 +1,11 @@
+import os
+
 import pandas as pd
 from nmastudio.tools.utils import get_network
 import warnings
 warnings.filterwarnings('ignore')
 
-
+print(os.getcwd())
 
 NET_DATA = pd.read_csv('db/psoriasis_wide.csv')
 NET_DATA2 = NET_DATA.drop(["TE", "seTE", "n1", "n2"], axis=1)
