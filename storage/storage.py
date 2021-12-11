@@ -8,7 +8,7 @@ warnings.filterwarnings('ignore')
 _DB_PATH = './db'
 print(os.getcwd())
 
-NET_DATA = pd.read_csv('./db/psoriasis_wide.csv')
+NET_DATA = pd.read_csv(f'{_DB_PATH}/psoriasis_wide.csv')
 NET_DATA2 = NET_DATA.drop(["TE", "seTE", "n1", "n2"], axis=1)
 NET_DATA2 = NET_DATA2.rename(columns={"TE2": "TE", "seTE2": "seTE", "n2.1": "n1", "n2.2": "n2"})
 CONSISTENCY_DATA = pd.read_csv(f'{_DB_PATH}/consistency/consistency.csv')
