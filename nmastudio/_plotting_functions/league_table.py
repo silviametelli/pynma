@@ -29,7 +29,7 @@ def _print_league_table(net_data, league_table_data, toggle_cinema=False,
 
     if any((values_only, lower_error, upper_error)):
         np.fill_diagonal(leaguetable.values, [np.nan] * len(leaguetable))
-        leaguetable = leaguetable.astype(np.float)
+        leaguetable = leaguetable.astype(np.float64)
 
     confidence_map = {k: n for n, k in enumerate(['low', 'medium', 'high'])}
     treatments = np.unique(net_data[['treat1', 'treat2']].dropna().values.flatten())
