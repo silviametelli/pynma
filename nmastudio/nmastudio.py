@@ -59,7 +59,6 @@ class NMA(Loader):
             embed_minimal_html(_net_plot_path, views=[cyG], title='NMA Studio - Treatments network')
             webbrowser.open(f'file://{os.getcwd()}/{_net_plot_path}', new=2)
 
-
     def plot_forest(self):
         pass
 
