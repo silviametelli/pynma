@@ -3,7 +3,6 @@
 [![CircleCI](https://circleci.com/gh/silviametelli/nmastudio.svg?style=svg&circle-token=562c10211cff35b9101f70a169544d5c4c745168)](https://app.circleci.com/pipelines/github/silviametelli/nmastudio)
 [![PyPI Latest Release](https://img.shields.io/pypi/v/CryptPandas.svg)](https://pypi.org/project/CryptPandas/)
 [![License](https://img.shields.io/pypi/l/CryptPandas.svg)](https://github.com/silviametelli/nmastudio/blob/main/LICENSE)
-[![Downloads](https://static.pepy.tech/personalized-badge/cryptpandas?period=total&units=international_system&left_color=grey&right_color=blue&left_text=Downloads)](https://pepy.tech/project/cryptpandas)
 [![Python](https://img.shields.io/static/v1?label=made%20with&message=Python&color=blue&style=for-the-badge&logo=Python&logoColor=white)](#)
 
 
