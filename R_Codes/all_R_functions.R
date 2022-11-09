@@ -26,6 +26,7 @@ run_NetMeta <- function(dat){
                         sm = sm,
                         random = TRUE,
                         backtransf = TRUE,
+                        incr = 0.5,
                         #prediction = TRUE,
                         reference.group = treatments[1])
     ### Values
@@ -65,6 +66,7 @@ league_rank <- function(dat, outcome2=FALSE){
                          treat1=dat1$treat1, treat2=dat1$treat2,
                          studlab=dat1$studlab,
                          sm = sm1,
+                         incr = 0.5,
                          random = TRUE, backtransf = TRUE,
                          reference.group = dat1$treat2[1])
   sortedseq <- sort(nma_primary$trts)
@@ -112,6 +114,7 @@ league_rank <- function(dat, outcome2=FALSE){
     nma_secondary <- netmeta(TE=dat2$TE2, seTE=dat2$seTE2,
                              treat1=dat2$treat1, treat2=dat2$treat2,
                              studlab=dat2$studlab, sm = sm2,
+                             incr = 0.5,
                              random = TRUE, backtransf = TRUE,
                              reference.group = dat2$treat2[1])
 
@@ -236,6 +239,7 @@ funnel_funct <- function(dat){
                  treat1=dat$treat1, treat2=dat$treat2,
                  studlab=dat$studlab,
                  sm = sm,
+                 incr = 0.5,
                  random = TRUE,
                  backtransf = FALSE,
                  reference.group = treatments[1])

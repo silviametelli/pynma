@@ -1,18 +1,37 @@
 import numpy as np, pandas as pd
+import rpy2
+from rpy2.robjects import pandas2ri  # Define the R script and loads the instance in Python
+#pandas2ri.activate()
+import rpy2.robjects as ro
+import rpy2.rinterface_lib as rlib
+from rpy2.robjects.conversion import localconverter
 
+#  customised colors
 CINEMA_g, CINEMA_y, CINEMA_lb, CINEMA_r = '#5aa469', '#f8d49d', '#75cfb8', '#d35d6e'
 CLR_BCKGRND = '#1b242b'
 CLR_BCKGRND_old = '#1b242b'
-CLR_BCKGRND2 = '#40515e'  ### tab color #40515E
+CLR_BCKGRND2 = '#40515e'
 CLR_BORDEAUX = '#751226'
-CLR_BCKGRND_TABS = '#6f8ba1' # '#40515e'
-DFLT_ND_CLR = '#07ABA0'    ##  '#07ABA0'
+CLR_BCKGRND_TABS = '#6f8ba1'
+DFLT_ND_CLR = '#07ABA0'
 DFLT_EDG_CLR = '#b2b2b2'
 
 CX1 = '#1A242B'
 CX2 = '#d6d6d6'
 
-CMAP = ['purple', 'green', 'blue', 'red', 'black', 'yellow', 'orange', 'pink', 'brown', 'grey']
+# ------------------------------------------------------------------ detect Jupyter # -------------------------------------------------------------- #
+
+try:    # This works on jupyter ipython
+    _IS_JUPYTER = bool(get_ipython().config)
+    _IS_IPYTHON = True
+except: # On plain python get_ipython is not defined
+    _IS_JUPYTER = _IS_IPYTHON =  False
+
+
+# -------------------------------------------------------------------- network plot ----------------------------------------------------------------- #
+
+CMAP = ['bisque', 'gold', 'light blue', 'tomato', 'orange', 'olivedrab', 'darkslategray', 'orchid', 'brown', 'navy',
+        'palegreen', 'black', 'brown', 'green']
 def get_network(df, sep=False):
     df = df.dropna(subset=['TE', 'seTE'])
     if "treat1_class" and "treat2_class" in df.columns:
@@ -60,10 +79,89 @@ def get_network(df, sep=False):
         return cy_edges + cy_nodes
 
 
+# ------------------------------------------------------ adjust data ------------------------------------------------------------------------- #
+
+r = ro.r
+r['source']('R_Codes/all_R_functions.R')  # Loading the function we have defined in R.
+run_NetMeta_r = ro.globalenv['run_NetMeta']  # Get run_NetMeta from R
+league_table_r = ro.globalenv['league_rank']  # Get league_table from R
+pairwise_forest_r = ro.globalenv['pairwise_forest']  # Get pairwise_forest from R
+funnel_plot_r = ro.globalenv['funnel_funct']  # Get pairwise_forest from R
+run_pairwise_data_long_r = ro.globalenv['get_pairwise_data_long']  # Get pairwise data from long format from R
+run_pairwise_data_contrast_r = ro.globalenv['get_pairwise_data_contrast']  # Get pairwise data from contrast format from R
 
 
-try:    # This works on jupyter ipython
-    _IS_JUPYTER = bool(get_ipython().config)
-    _IS_IPYTHON = True
-except: # On plain python get_ipython is not defined
-    _IS_JUPYTER = _IS_IPYTHON =  False
+
+def apply_r_func(func, df):
+
+    with localconverter(ro.default_converter + pandas2ri.converter):
+        df_r = ro.conversion.py2rpy(df.reset_index(drop=True))
+    func_r_res = func(dat=df_r)
+    r_result = pandas2ri.rpy2py(func_r_res)
+
+    if isinstance(r_result, ro.vectors.ListVector):
+        with localconverter(ro.default_converter + pandas2ri.converter):
+            leaguetable, pscores, consist, netsplit, netsplit_all  = (ro.conversion.rpy2py(rf) for rf in r_result)
+        return leaguetable, pscores, consist, netsplit, netsplit_all
+    else:
+        df_result = r_result.reset_index(drop=True)  # Convert back to a pandas.DataFrame.
+        return df_result
+
+
+def apply_r_func_two_outcomes(func, df):
+    with localconverter(ro.default_converter + pandas2ri.converter):
+        df_r = ro.conversion.py2rpy(df.reset_index(drop=True))
+    func_r_res = func(dat=df_r, outcome2=True)
+    r_result = pandas2ri.rpy2py(func_r_res)
+
+    if isinstance(r_result, ro.vectors.ListVector):
+        with localconverter(ro.default_converter + pandas2ri.converter):
+            leaguetable, pscores, consist, netsplit, netsplit2, netsplit_all, netsplit_all2 = (ro.conversion.rpy2py(rf) for rf in r_result)
+        return leaguetable, pscores, consist, netsplit, netsplit2, netsplit_all, netsplit_all2
+    else:
+        df_result = r_result.reset_index(drop=True)  # Convert back to a pandas.DataFrame.
+        return df_result
+
+
+def adjust_data(data, dataselectors, value_format, value_outcome1, value_outcome2):
+
+    if data['rob'].dtype == object:
+        data['rob'] = (data['rob'].str.lower()
+                      .replace({'low': 'l', 'medium': 'm', 'high': 'h'})
+                      .replace({'l': 1, 'm': 2, 'h': 3}))
+    data['effect_size1'] = dataselectors[0]
+
+    if value_format=='long':
+        for c in data.columns:
+            if data[c].dtype == object:
+                data[c].fillna('__NONE__', inplace=True)
+        if value_outcome2:
+            data['effect_size2'] = dataselectors[1]
+            data = apply_r_func_two_outcomes(func=run_pairwise_data_long_r, df=data)
+        else:
+            data = apply_r_func(func=run_pairwise_data_long_r, df=data)
+        data[data=='__NONE__'] = np.nan
+
+
+    if value_format=='contrast':
+        for c in data.columns:
+            if data[c].dtype == object:
+                data[c].fillna('__NONE__', inplace=True)
+        if value_outcome2:
+            data['effect_size2'] = dataselectors[1]
+            data = apply_r_func_two_outcomes(func=run_pairwise_data_contrast_r, df=data)
+        else:
+            data = apply_r_func(func=run_pairwise_data_contrast_r, df=data)
+        data[data=='__NONE__'] = np.nan
+
+    if value_format == 'iv':
+        data['effect_size1'] = dataselectors[0]
+        if value_outcome2: data['effect_size2'] = dataselectors[1]
+        data = data
+
+    return data
+
+
+
+
+

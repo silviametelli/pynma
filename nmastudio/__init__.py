@@ -8,16 +8,20 @@ with open(f'nmastudio/__res/icon_mini.svg', 'r') as f:
     _svg_cnn = f.read()
 HTML_repr_extended = _svg_cnn + f"""
 <span style="white-space: nowrap;">
-<b>NMA Studio</b>
+<b>NMAstudio</b>
 
 </span></br>
 <span style="white-space: nowrap;">
 <span style="color: gray">Interactive app:</span>
-<span white-space: nowrap;><a  href="www.nmastudio.com">www.nmastudio.com</a></span>
+<span white-space: nowrap;><a  href="www.nmastudioapp.com">www.nmastudioapp.com</a></span>
 </span></br>
 <span style="white-space: nowrap;">
 <span style="color: gray">Documentation
-<span white-space: nowrap;><a href="https://github.com/silviametelli/nmastudio">available here</a>.</span></span>
+<span white-space: nowrap;><a href="http://silviametelli.com/NMAstudio_tutorial.pdf">available here</a></span></span>
+</span></br>
+<span style="white-space: nowrap;">
+<span style="color: gray">Source code
+<span white-space: nowrap;><a href="https://github.com/silviametelli/nmastudio">available here</a></span></span>
 </span></br>
 """
 

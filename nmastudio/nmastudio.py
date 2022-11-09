@@ -14,6 +14,9 @@ from nmastudio.tools.utils import _IS_JUPYTER
 if _IS_JUPYTER:
     from IPython.core.display import HTML
 
+flatten = lambda t: [item for sublist in t for item in sublist]
+
+
 DEBUG = True
 if DEBUG:
     class Empty: pass
@@ -23,14 +26,35 @@ if DEBUG:
 class NMA(Loader):
 
     def __init__(self):
-        super().__init__()
+        super().__init__()  # import attributes from Loader class
+
+    def print_summary(self):
+        """"
+        Print main network characteristics:
+        1) number of studies
+        2) number of treatments
+        3) number of variables in data
+        """
+        COLUMN_NAMES = ['Number of studies', 'Number of treatments', 'Number of variables']
+        data = self.net_data
+        uniquetrts = np.unique(data[['treat1', 'treat2']].dropna().values.flatten())
+        n_stud = len(np.unique(data.studlab))
+        n_trts = len(uniquetrts)
+        n_vars = len(data.columns)
+        values = [n_stud, n_trts, n_vars]
+        summary_dict = {col: val for col, val in zip(COLUMN_NAMES,values)}
+        summary = pd.DataFrame(data=summary_dict, index=[0])
+        trts_df = pd.DataFrame(uniquetrts, columns=["Treatments"])
+        trts_df.index += 1 # treatment index from one: more intuitive for users
+        return summary.reset_index(drop=True), trts_df
+
+
 
     def plot_network(self, layout='circle', pie=False, height=None, width=None):
         """
         Notes
         -----
-        Reduced functionalities when NOT opened from jupyter.
-
+        May have reduced functionalities when NOT opened from jupyter.
         Parameters
         ----------
         layout : str
@@ -41,8 +65,7 @@ class NMA(Loader):
             Interactive widget height; e.g. '400px'
         width : str
             Interactive widget width; e.g. '400px'
-
-        Returns
+        Returnss
         -------
         ipycytoscape.cytoscape.CytoscapeWidget
         """
@@ -59,10 +82,76 @@ class NMA(Loader):
             embed_minimal_html(_net_plot_path, views=[cyG], title='NMA Studio - Treatments network')
             webbrowser.open(f'file://{os.getcwd()}/{_net_plot_path}', new=2)
 
-    def plot_forest(self):
-        pass
 
-    def plot_funnels(self, node_ref):
+    def plot_nma_forests(self, type="nma", outcome2=False, node_ref=None, edge_ref=None):
+        """
+        Notes
+        -----
+        Parameters
+        ----------
+        type : str
+            Type of forest plot desired:
+                "nma" for NMA forest plot
+                "pw" for pairwise forest plot
+                "bidim" for bi-dimensional forest plot
+        outcome2 : bool
+            Whether to show results for second outcome
+        node_ref : str
+            Reference node
+        edge_ref : str
+            Reference edge
+
+        """
+        if type == 'nma':
+            fig = nmastudio._plotting_functions._nma_forest(node_ref=node_ref, forest_data=self.forest_data, forest_data_out2=self.funnel_data_out2)
+        elif type == 'bidim':
+            fig = nmastudio._plotting_functions._bidim_forest(node_ref=node_ref,forest_data=self.forest_data, forest_data_out2=self.funnel_data_out2)
+        elif type == 'pw':
+            fig = nmastudio._plotting_functions._pw_forest(edge_ref=edge_ref, forest_data_prws=self.forest_data_pw, forest_data_prws_out_2=self.forest_data_pw_out2)
+        else:
+            raise KeyError("type must be either nma, bidim or pw.")
+
+        if not self._is_jupyter:
+            plotly.offline.plot(fig)
+        return fig
+
+
+
+    def league_table(self, subset=None, values_only=False, lower_error=False, upper_error=False):
+        """
+        Notes
+        -----
+        Parameters
+        ----------
+        subset : list
+            Subset of nodes to be displayed in the table
+        values_only : bool
+          shows only point estimates (CIs not printed)
+        lower_error : str
+            shows lower confidence bound only
+        upper_error : bool
+            shows upper confidence bound only
+
+        """
+        return nmastudio._plotting_functions._print_league_table(self.net_data, self.league_table_data,
+                                                                 subset=subset,
+                                                                 values_only=values_only,
+                                                                 lower_error=lower_error,
+                                                                 upper_error=upper_error)
+
+
+
+    def plot_funnels(self, node_ref, outcome2=False):
+        """
+        Notes: comparisons involving one study removed
+        -----
+        Parameters
+        ----------
+        node_ref : str
+            Reference node
+        outcome2 : bool
+            Whether to show results for second outcome
+        """
         fig = nmastudio._plotting_functions._funnelplot(node_ref=node_ref,
                                                         funnel_data=self.funnel_data,
                                                         funnel_data_out2=self.funnel_data_out2)
@@ -70,11 +159,62 @@ class NMA(Loader):
             plotly.offline.plot(fig)
         return fig
 
-    def plot_ranking(self, type='heatmap', outcomes=None):
 
-        if type=='scatter':
+
+    def consistency_checks(self, type="netsplit", outcome2=False, subset=None):
+        """
+        Parameters
+        ----------
+        netsplit: str
+            Type of consistency check desired:
+                "netsplit" for local netsplit approach
+                "design" for global design-by-treatment interaction method
+        outcome2 : bool
+            Whether to show results for second outcome
+        subset: list
+            Subset of edges to be displayed in the netsplit table
+        """
+        if type=='netsplit':
+            df = (self.net_split_data if not outcome2
+                  else self.net_split_data_out2
+            if self.net_split_data_out2 else None)
+            if df is not None:
+                comparisons = df.comparison.str.split(':', expand=True)
+                df['Comparison'] = comparisons[0] + ' vs ' + comparisons[1]
+                df = df.loc[:, ~df.columns.str.contains("comparison")]
+                df = df.sort_values(by='Comparison').reset_index()
+                df = df[['Comparison', "direct", "indirect", "p-value"]].round(decimals=4)
+
+            slctd_comps = []
+            for edge in subset or []:
+                src, trgt = edge['source'], edge['target']
+                slctd_comps += [f'{src} vs {trgt}']
+            if subset and df is not None:
+                df = df[df.Comparison.isin(slctd_comps)]
+            return df
+        elif type=='design':
+            return self.consistency_data.round(decimals=4)
+        else:
+            raise KeyError("type must be either netsplit or design.")
+
+
+    def plot_ranking(self, type='heatmap', outcome2=False):
+        """
+        Notes
+        -----
+        Parameters
+        ----------
+        type: str
+            Type of ranking plot to be displayed:
+                "heatmap" of p-scores
+                "scatter" for scatter plot of p-scores (if both outcomes)
+        outcome2 : bool
+           if True, shows results for both first and second outcome else first outcome only
+
+        """
+        if type == 'scatter':
             fig = nmastudio._plotting_functions._ranking_scatter(self.net_data, self.ranking_data)
-        elif type=='heatmap':
+        elif type == 'heatmap':
             fig = nmastudio._plotting_functions._ranking_heatmap(self.ranking_data)
         else:
             raise KeyError("type must be either heatmap or scatter.")
@@ -83,14 +223,10 @@ class NMA(Loader):
             plotly.offline.plot(fig)
         return fig
 
-    def league_table(self, subset=None, values_only=False, lower_error=False, upper_error=False):
-        return nmastudio._plotting_functions._print_league_table(self.net_data, self.league_table_data,
-                                                                 subset=subset,
-                                                                 values_only=values_only,
-                                                                 lower_error=lower_error,
-                                                                 upper_error=upper_error)
+
 
     def __repr__(self):
+        """ Representation string """
         sb, eb = ("\033[1m","\033[0;0m") if self._is_ipython else ('','')  # Bold
         sr, er = ("\x1b[31m", "\x1b[0m") if self._is_ipython else ('','')  # Red
         sg, eg = ("\033[92m", "\033[0m") if self._is_ipython else ('','')  # Green
@@ -98,7 +234,6 @@ class NMA(Loader):
         return _repr
 
     def _repr_html_(self):
-        # path = f'{os.path.dirname(__file__)}/__res/icon.ico'
         with open(f'nmastudio/__res/icon_mini.svg', 'r') as f:
             _svg_cnn = f.read()
         html_repr = _svg_cnn + f"""</br>
@@ -118,8 +253,8 @@ class NMA(Loader):
         </span></br>
         </br>
         <span style="white-space: nowrap;">
-        <b>Consistency checks</b></br>
-        {self.consistency_checks().to_html()}
+        <b>Summary of the NMA data</b></br>
+        {self.print_summary()[0].to_html()} 
         </br>
         <b>Available methods</b>:</br>
         <span white-space: nowrap;>plot_network(<span style="color: orange">layout</span>='circle', 
@@ -138,6 +273,9 @@ class NMA(Loader):
     #     return self._repr_html_()
 
 
+############################################################################################################################
+##############################################################  MAIN #######################################################
+############################################################################################################################
 
 
 if __name__=='__main__':
