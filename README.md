@@ -21,7 +21,6 @@ From Conda:
 Silvia Metelli, 2022
 
 [![Python](https://img.shields.io/static/v1?label=made%20with&message=Python&color=blue&style=for-the-badge&logo=Python&logoColor=white)](#)
-[![Python](https://img.shields.io/badge/Maturity%20Level-Under%20Development-orange)](#)
 
 
 
