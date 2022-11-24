@@ -1,4 +1,4 @@
-# nmastudio
+# pynma
 
 [![PyPI Latest Release](https://img.shields.io/pypi/v/CryptPandas.svg)](https://pypi.org/project/CryptPandas/)
 [![License](https://img.shields.io/pypi/l/CryptPandas.svg)](https://github.com/silviametelli/nmastudio/blob/main/LICENSE)
@@ -9,11 +9,11 @@
 
 From PyPi:
 
-`pip install nmastudio`
+`pip install pynma`
 
 From Conda:
 
-`conda install nmastudio`
+`conda install pynma`
 
 # Author
 
