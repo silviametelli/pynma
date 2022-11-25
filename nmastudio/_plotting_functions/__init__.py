@@ -1,3 +1,0 @@
-from nmastudio._plotting_functions.ranking import _ranking_scatter, _ranking_heatmap
-from nmastudio._plotting_functions.funnels import _funnelplot
-from nmastudio._plotting_functions.league_table import _print_league_table

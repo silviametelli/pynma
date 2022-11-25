@@ -1,5 +1,5 @@
 import pandas as pd
-from nmastudio.tools.utils import get_network
+from pynma.tools.utils import get_network
 from collections import OrderedDict
 
 

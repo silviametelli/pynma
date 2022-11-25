@@ -1,6 +1,6 @@
 import os
 import pandas as pd
-from nmastudio.tools.utils import get_network
+from pynma.tools.utils import get_network
 import warnings
 warnings.filterwarnings('ignore')
 

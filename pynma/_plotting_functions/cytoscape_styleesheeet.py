@@ -1,6 +1,6 @@
-from nmastudio.tools.COLORS import *
-from nmastudio.tools.storage import N_CLASSES
-from nmastudio.tools.utils import CMAP
+from pynma.tools.COLORS import *
+from pynma.tools.storage import N_CLASSES
+from pynma.tools.utils import CMAP
 
 
 def get_stylesheet(node_size=False, classes=False, n_class=N_CLASSES, edg_col= False, nd_col=DFLT_ND_CLR, edge_size=False,

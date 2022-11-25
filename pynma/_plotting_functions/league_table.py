@@ -1,9 +1,9 @@
 import numpy as np, pandas as pd
 import plotly.graph_objects as go
 import plotly
-from nmastudio.tools.utils import _IS_JUPYTER
+from pynma.tools.utils import _IS_JUPYTER
 
-from nmastudio.tools.utils import CINEMA_g, CINEMA_y, CINEMA_lb, CINEMA_r, CLR_BCKGRND2, CX1, CX2
+from pynma.tools.utils import CINEMA_g, CINEMA_y, CINEMA_lb, CINEMA_r, CLR_BCKGRND2, CX1, CX2
 
 
 def _print_league_table(net_data, league_table_data, toggle_cinema=False,

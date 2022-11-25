@@ -1,6 +1,6 @@
 import os, shutil
 import pandas as pd, numpy as np
-from nmastudio.tools.utils import adjust_data
+from pynma.tools.utils import adjust_data
 
 
 from storage import (NET_DATA, RANKING_DATA,
@@ -9,7 +9,7 @@ from storage import (NET_DATA, RANKING_DATA,
                      NETSPLIT_DATA, NETSPLIT_DATA_OUT2,
                      LEAGUE_TABLE_DATA, FOREST_DATA, FOREST_DATA_OUT2,
                      FOREST_DATA_PRWS, FOREST_DATA_PRWS_OUT2)
-from nmastudio.tools.utils import _IS_JUPYTER, _IS_IPYTHON, adjust_data, get_network
+from pynma.tools.utils import _IS_JUPYTER, _IS_IPYTHON, adjust_data, get_network
 
 class Loader:
     net_data = NET_DATA
@@ -28,7 +28,7 @@ class Loader:
 
     def __init__(self):
         self._states = dict(data='default')
-        __TEMP_PATH = 'nmastudio/__temp'
+        __TEMP_PATH = 'pynma/__temp'
         if os.path.exists(__TEMP_PATH):
             shutil.rmtree(__TEMP_PATH)
         os.makedirs(__TEMP_PATH, exist_ok=True)

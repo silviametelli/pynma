@@ -1,14 +1,14 @@
-from nmastudio.nmastudio import *
-from nmastudio.tools.utils import _IS_JUPYTER
+from pynma.pynma import *
+from pynma.tools.utils import _IS_JUPYTER
 import sys
 
 # print(locals()['__spec__'].origin)
 
-with open(f'nmastudio/__res/icon_mini.svg', 'r') as f:
+with open(f'pynma/__res/icon_mini.svg', 'r') as f:
     _svg_cnn = f.read()
 HTML_repr_extended = _svg_cnn + f"""
 <span style="white-space: nowrap;">
-<b>NMAstudio</b>
+<b>pynma -- NMAstudio</b>
 
 </span></br>
 <span style="white-space: nowrap;">
@@ -21,17 +21,17 @@ HTML_repr_extended = _svg_cnn + f"""
 </span></br>
 <span style="white-space: nowrap;">
 <span style="color: gray">Source code
-<span white-space: nowrap;><a href="https://github.com/silviametelli/nmastudio">available here</a></span></span>
+<span white-space: nowrap;><a href="https://github.com/silviametelli/pynma">available here</a></span></span>
 </span></br>
 """
 
-PLAIN_repr_extended = """My personalised representation of nmastudio"""
+PLAIN_repr_extended = """My personalised representation of pynma"""
 
 # if _IS_JUPYTER:
 #     from IPython.core.display import HTML
 #     display(HTML(_svg_cnn))
 
-class CustomReprModule(nmastudio.__class__):
+class CustomReprModule(pynma.__class__):
     def __init__(self, other):
         for attr in dir(other):
             setattr(self, attr, getattr(other, attr))

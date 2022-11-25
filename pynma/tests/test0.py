@@ -5,16 +5,16 @@
 
 
 def test_import_package():
-    import nmastudio
-    nma = nmastudio.NMA()
+    import pynma
+    nma = pynma.NMA()
     assert nma
 
-import nmastudio
+import pynma
 
 def test_plotting():
-    nma = nmastudio.NMA()
+    nma = pynma.NMA()
     nma.league_table(subset=['BRODA', 'ETA', 'FUM'], values_only=True)
 
 def test_table():
-    nma = nmastudio.NMA()
+    nma = pynma.NMA()
     nma.league_table(subset=['BRODA', 'ETA', 'FUM'], values_only=True)
